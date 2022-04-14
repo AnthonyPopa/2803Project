@@ -36,22 +36,20 @@
             $sql = "SELECT * FROM users WHERE username = '$name'";
             $result = mysqli_query($connect, $sql);
 
-            $foundPass;
-            if (mysqli_num_rows($result) == 0) {
-                echo "<script> showUsernameError(); </script>";
-            } else {
-                while($row = mysqli_fetch_assoc($result)) {
-                    if ($row["username"] == $name) {
-                        $foundPass = $row["password"];
-                    }
+            $foundPass = "";
+            while($row = mysqli_fetch_assoc($result)) {
+                if ($row["username"] == $name) {
+                    $foundPass = $row["password"];
                 }
             }
 
-            if ($foundPass == $pass) {
+            if ($foundPass == $pass && $pass != "") {
                 session_start();
                 $_SESSION["username"] = $name;
                 session_write_close();
                 header("Location: main.php");
+            } else if ($foundPass == "") {
+                echo "<script> showUsernameError(); </script>";
             } else {
                 echo "<script> showPasswordError(); </script>";
             }
