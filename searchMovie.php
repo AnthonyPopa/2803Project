@@ -1,6 +1,9 @@
 <?php
 //Pull api key from config
 $config = parse_ini_file("config.ini");
+$servername = $config['dbHost'];
+$username = $config['dbUser'];
+$password = $config['dbPass'];
 $apiKey = $config['apiKey'];
 
 // Setup url for seach
