@@ -8,8 +8,9 @@
 </head>
 <body>
     <h1>Main Page</h1>
-    <p>
-        <a href="movieSearch.html">Search For A Movie</a>
-    </p>
+    <form action="searchMovie.php" method="post">
+    Search: <input type="text" name="searchTerm"><br>
+    <input type="submit">
+    </form>
 </body>
 </html>
