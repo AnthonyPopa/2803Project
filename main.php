@@ -12,5 +12,6 @@
     Search: <input type="text" name="searchTerm"><br>
     <input type="submit">
     </form>
+    <button onclick="location.href = 'movieRecs.php';">Popular Movies</button>
 </body>
 </html>
