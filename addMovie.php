@@ -7,7 +7,7 @@ $username = $config['dbUser'];
 $password = $config['dbPass'];
 
 // Initialize and test sql connection
-$conn = new mysqli($servername, $username, $password, 'movie');
+$conn = new mysqli($servername, $username, $password, 'movieTime');
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
