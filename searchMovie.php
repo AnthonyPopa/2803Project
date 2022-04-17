@@ -10,7 +10,11 @@ $term = str_replace(' ', '+', $term);
 $url = 'https://api.themoviedb.org/3/search/movie?api_key='.$apiKey.'&query='.$term;
 
 //Get the current user (temporarily hardcoded to test user)
-$sesionUser = "test";
+if(!isset($_SESSION['username'])) {
+  header("Location: notLogged.php");
+die();
+}
+$sesionUser = $_SESSION['username']);
  
 
 
