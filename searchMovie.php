@@ -38,18 +38,14 @@ echo "
 <head>
 <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js></script>
 <title>Search Results</title>
-<style>
-img {
-  max-width: 100px;
- }
-</style>
+<link rel='stylesheet' href='style.css'>
 </head>
 ";
 
 // Echo posters from first 10 results with id of the movie id
 for ($i = 0; $i < $num; $i ++) {
   echo '<img src = "'.$imgUrl.$res[$i]["poster_path"].'" id = "'.strval($res[$i]["id"]).'">
-  <caption>'.$res[$i]['title'].'</caption>
+  <p>'.$res[$i]['title'].'</p>
   ';
 }
 
