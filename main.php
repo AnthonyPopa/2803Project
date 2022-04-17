@@ -8,5 +8,8 @@
 </head>
 <body>
     <h1>Main Page</h1>
+    <p>
+        <a href="movieSearch.html">Search For A Movie</a>
+    </p>
 </body>
 </html>

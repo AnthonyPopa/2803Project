@@ -30,8 +30,12 @@
     </script>
 
     <?php
+        $config = parse_ini_file("config.ini");
+        $servername = $config['dbHost'];
+        $username = $config['dbUser'];
+        $password = $config['dbPass'];
         if (isset($_POST["username"])) {
-            $connect = mysqli_connect("localhost", "root", null, "movietime");
+            $connect = mysqli_connect($servername, $username, $password, "movietime");
             if (!$connect) {
                 die("Connection failed: " . mysqli_connect_error());
             }
