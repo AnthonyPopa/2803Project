@@ -10,11 +10,12 @@ $term = str_replace(' ', '+', $term);
 $url = 'https://api.themoviedb.org/3/search/movie?api_key='.$apiKey.'&query='.$term;
 
 //Get the current user (temporarily hardcoded to test user)
+session_start();
 if(!isset($_SESSION['username'])) {
   header("Location: notLogged.php");
-die();
+  die();
 }
-$sesionUser = $_SESSION['username']);
+$sesionUser = $_SESSION['username'];
  
 
 
@@ -26,6 +27,7 @@ $result = curl_exec($ch);
 $jsn = json_decode($result,true);
 $res = $jsn['results'];
 
+$num = min(count($res),10);
 
 //Set page header
 echo "
@@ -42,8 +44,9 @@ img {
 ";
 
 // Echo posters from first 10 results with id of the movie id
-for ($i = 0; $i < 10; $i ++) {
+for ($i = 0; $i < $num; $i ++) {
   echo '<img src = "'.$imgUrl.$res[$i]["poster_path"].'" id = "'.strval($res[$i]["id"]).'">
+  <caption>'.$res[$i]['title'].'</caption>
   ';
 }
 
@@ -77,7 +80,7 @@ function addMovie(username,movieID) {
 
 
 // Add event listeners to each movie poster
-for ($i = 0; $i < 10; $i ++) {
+for ($i = 0; $i < $num; $i ++) {
   echo "
   document.getElementById('".strval($res[$i]["id"])."').addEventListener('click', function(){
   addMovie('".$sesionUser."','".strval($res[$i]["id"])."')});";

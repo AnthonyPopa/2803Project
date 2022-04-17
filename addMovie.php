@@ -7,7 +7,7 @@ $username = $config['dbUser'];
 $password = $config['dbPass'];
 
 // Initialize and test sql connection
-$conn = new mysqli($servername, $username, $password, 'movieTime');
+$conn = new mysqli($servername, $username, $password, 'movietime');
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
@@ -18,7 +18,7 @@ $sessionUser = $_POST['user'];
 $movieID = $_POST['id'];
 
 // Generate SQL query string
-$qstring = "INSERT INTO ".$sessionUser." VALUES (".$movieID.");";
+$qstring = "INSERT INTO ".$sessionUser." VALUES (".$movieID.", 0);";
 
 //TODO Check if movie is already in table before adding it
 
