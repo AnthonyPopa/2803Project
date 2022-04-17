@@ -39,13 +39,13 @@
             if (!$connect) {
                 die("Connection failed: " . mysqli_connect_error());
             }
-            $name = $_POST["username"];
-            $pass = $_POST["password"];
+            $name = strtolower($_POST["username"]);
+            $pass = password_hash($_POST["password"], PASSWORD_BCRYPT);
 
             $sql = "SELECT * FROM users WHERE username = '$name'";
             $result = mysqli_query($connect, $sql);
 
-            if (mysqli_num_rows($result) == 0 && strlen($pass) >= 8) {
+            if (mysqli_num_rows($result) == 0 && strlen($_POST["password"]) >= 8 && strlen($name) >= 6) {
                 $sql = "INSERT INTO users (username, password)
                 VALUES ('$name', '$pass')";
                 if (!mysqli_query($connect, $sql)) {
@@ -55,6 +55,9 @@
                 if (!mysqli_query($connect, $sql)) {
                     die("Failed to create new table for user");
                 }
+                session_start();
+                $_SESSION["username"] = $name;
+                session_write_close();
                 header("Location: main.php");
             }
         }
