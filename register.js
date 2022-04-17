@@ -13,13 +13,7 @@ function query() {
 }
 
 function showError(string) {
-    if (string == "name") {
-        document.getElementById("error").innerHTML = "Username already taken.";
-        document.getElementById("OK").innerHTML = "";
-    } else if (string == "pass") {
-        document.getElementById("error").innerHTML = "Password must be at least 8 characters.";
-        document.getElementById("OK").innerHTML = "";
-    } else if (string == "ok") {
+    if (string == "ok") {
         document.getElementById("error").innerHTML = "";
         document.getElementById("OK").innerHTML = "Username and password are valid.";
     } else {
