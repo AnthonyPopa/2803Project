@@ -20,7 +20,7 @@
         </table>
     </div>
 
-    <form action="searchMovie.php" method="post">
+    <form action="searchMovie.php" method="post" class ="main">
     Search: <input type="text" name="searchTerm"><br>
     <input type="submit">
     </form>

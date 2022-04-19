@@ -53,8 +53,7 @@ echo "
             </tr>
         </table>
     </div>
-</body>
-";
+<div class ='main'>";
 
 // Echo posters from first 10 results with id of the movie id
 for ($i = 0; $i < $num; $i ++) {
@@ -62,6 +61,9 @@ for ($i = 0; $i < $num; $i ++) {
   <p>'.$res[$i]['title'].'</p>
   ';
 }
+
+echo "</div></body>
+";
 
 
 // Echo javascript functions needed to modify database
