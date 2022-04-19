@@ -40,6 +40,20 @@ echo "
 <title>Search Results</title>
 <link rel='stylesheet' href='style.css'>
 </head>
+
+<body>
+    <div id='nav'>
+        <h1>Movie Time</h1>
+
+        <table>
+            <tr>
+                <td><a href='main.php'>Search</a></td>
+                <td><a href='movieRecs.php'>Top Movies</a></td>
+                <td><a href='accountList.php'>My Movies</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
 ";
 
 // Echo posters from first 10 results with id of the movie id

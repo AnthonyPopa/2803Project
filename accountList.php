@@ -35,13 +35,23 @@ echo "
 <!DOCTYPE HTML>
 <head>
 <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js></script>
+<link rel='stylesheet' href='style.css'>
 <title>Your Library</title>
-<style>
-img {
-  max-width: 100px;
- }
-</style>
 </head>
+
+<body>
+    <div id='nav'>
+        <h1>Movie Time</h1>
+
+        <table>
+            <tr>
+                <td><a href='main.php'>Search</a></td>
+                <td><a href='movieRecs.php'>Top Movies</a></td>
+                <td><a href='accountList.php'>My Movies</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
 ";
 //getData('test');
 
@@ -59,7 +69,7 @@ $result = mysqli_query($conn,$qstring) or die(mysqli_error($conn));
 while ($rows = mysqli_fetch_assoc($result)){
     $res = getData($rows['movie']);
     echo '<img src = "'.$imgUrl.$res["poster_path"].'" id = "'.strval($res["id"]).'">
-    <caption>'.$res['title'].'</caption>
+    <p>'.$res['title'].'</p>
     ';
 }
 

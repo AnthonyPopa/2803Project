@@ -8,17 +8,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Movie Time</h1>
+    <div id="nav">
+        <h1>Movie Time</h1>
 
-    <table>
-        <tr>
-            <td><a href="main.php">Search</a></td>
-            <td><a href="movieRecs.php">Top Movies</a></td>
-            <td><a href="accountList.php">My Movies</a></td>
-        </tr>
-    </table>
+        <table>
+            <tr>
+                <td><a href="main.php">Search</a></td>
+                <td><a href="movieRecs.php">Top Movies</a></td>
+                <td><a href="accountList.php">My Movies</a></td>
+            </tr>
+        </table>
+    </div>
 
-    <form id="bar" action="searchMovie.php" method="post">
+    <form action="searchMovie.php" method="post">
     Search: <input type="text" name="searchTerm"><br>
     <input type="submit">
     </form>

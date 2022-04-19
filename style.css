@@ -1,4 +1,4 @@
-h1, h2, h3, p, caption, form {
+h1, h2, h3, p, form {
     color: rgb(3, 180, 180);
     text-align: center;
     font-family: Verdana, sans-serif;
@@ -18,17 +18,16 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+#nav {
+    padding-bottom: 20px;
+}
 table {
     background-color: rgb(3, 180, 180);
     width: 100%;
     table-layout: fixed;
-    position: fixed;
 }
 td {
     text-align: center;
     font-family: Verdana, sans-serif;
     padding: 10px;
-}
-#bar {
-    padding-top: 120px;
 }
