@@ -12,9 +12,9 @@
 
     <table>
         <tr>
-            <td><a href="searchMovie.php">Search</a></td>
+            <td><a href="main.php">Search</a></td>
             <td><a href="movieRecs.php">Top Movies</a></td>
-            <td><a href="searchMovie.php">My Movies</a></td>
+            <td><a href="accountList.php">My Movies</a></td>
         </tr>
     </table>
 
@@ -22,7 +22,5 @@
     Search: <input type="text" name="searchTerm"><br>
     <input type="submit">
     </form>
-    <button onclick="location.href = 'movieRecs.php';">Popular Movies</button>
-    <button onclick="location.href = 'accountList.php';">View Your Movies</button>
 </body>
 </html>

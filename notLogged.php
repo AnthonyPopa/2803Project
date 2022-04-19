@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Time</title>
+    <link rel="stylesheet" href="style.css">
     <script src="index.js"></script>
 </head>
 <body>
@@ -30,7 +31,7 @@
             if (!$connect) {
                 die("Connection failed: " . mysqli_connect_error());
             }
-            $name = $_POST["username"];
+            $name = strtolower($_POST["username"]);
             $pass = $_POST["password"];
 
             $sql = "SELECT * FROM users WHERE username = '$name'";
@@ -43,7 +44,7 @@
                 }
             }
 
-            if ($foundPass == $pass && $pass != "") {
+            if (password_verify($pass, $foundPass) && $foundPass != "") {
                 session_start();
                 $_SESSION["username"] = $name;
                 session_write_close();
@@ -57,7 +58,7 @@
     ?>
 
     <h3>New Here? </h3>
-    <a href="register.php"><button>Click To Register!</button></a>
+    <form action="register.php"><input type="submit" value="Click To Register!"></form>
 </body>
 <script>
     alert("You must be logged in to do that!");
