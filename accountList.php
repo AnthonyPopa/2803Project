@@ -51,8 +51,8 @@ echo "
             </tr>
         </table>
     </div>
-</body>
-";
+
+    <div class ='main'>";
 //getData('test');
 
 
@@ -73,6 +73,7 @@ while ($rows = mysqli_fetch_assoc($result)){
     ';
 }
 
-
+echo "</div></body>
+";
 
 ?>
