@@ -16,6 +16,7 @@
                 <td><a href="main.php">Search</a></td>
                 <td><a href="movieRecs.php">Top Movies</a></td>
                 <td><a href="accountList.php">My Movies</a></td>
+                <td><a href='logout.php'>Logout</a></td>
             </tr>
         </table>
     </div>
