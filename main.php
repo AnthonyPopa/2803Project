@@ -13,5 +13,6 @@
     <input type="submit">
     </form>
     <button onclick="location.href = 'movieRecs.php';">Popular Movies</button>
+    <button onclick="location.href = 'accountList.php';">View Your Movies</button>
 </body>
 </html>
